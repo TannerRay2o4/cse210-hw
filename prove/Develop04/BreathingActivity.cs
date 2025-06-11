@@ -1,22 +1,22 @@
-using System;
-
 public class BreathingActivity : Activity
 {
     public BreathingActivity()
     {
-        _name = "Breathing Activity";
-        _description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
+        Name = "Breathing Activity";
+        Description = "This activity will help you relax by walking you through breathing in and out slowly. Clear your mind and focus on your breathing.";
     }
+
+    protected override int GetRecommendedDuration() => 30;
 
     public override void Run()
     {
         int elapsed = 0;
-        while (elapsed < _duration)
+        while (elapsed < Duration)
         {
             Console.Write("Breathe in...");
-            Countdown(5);
+            SimpleCountdown(3);
             Console.Write("Breathe out...");
-            Countdown(5);
+            SimpleCountdown(3);
             elapsed += 6;
         }
     }

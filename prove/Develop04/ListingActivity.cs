@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class ListingActivity : Activity
 {
-    private List<string> _prompts = new List<string>
+    private List<string> _prompts = new()
     {
         "List as many things as you can that you are grateful for.",
         "List the people who have helped you recently.",
@@ -13,22 +13,25 @@ public class ListingActivity : Activity
 
     public ListingActivity()
     {
-        _name = "Listing Activity";
-        _description = "This activity will help you reflect by listing things that bring positivity or strength to your life.";
+        Name = "Listing Activity";
+        Description = "This activity will help you reflect by listing things that bring positivity or strength to your life.";
     }
+
+    protected override int GetRecommendedDuration() => 60;
 
     public override void Run()
     {
-        Random rand = new Random();
-        Console.WriteLine(_prompts[rand.Next(_prompts.Count)]);
+        ShuffleList(_prompts);
+        Console.WriteLine(_prompts[0]);
         Console.WriteLine("Start listing! Press Enter after each item.");
 
-        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        DateTime endTime = DateTime.Now.AddSeconds(Duration);
         int count = 0;
 
         while (DateTime.Now < endTime)
         {
-            Console.Write("> ");
+            TimeSpan timeLeft = endTime - DateTime.Now;
+            Console.Write($"[{timeLeft.Seconds}s left] > ");
             Console.ReadLine();
             count++;
         }
