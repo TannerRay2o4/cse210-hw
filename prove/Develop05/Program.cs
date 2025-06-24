@@ -129,7 +129,7 @@ class Program
         if (goals[index] is ChecklistGoal cg)
             score += cg.GetBonus();
 
-        Console.WriteLine($"\n🎉 Event recorded! +{goals[index].GetPoints()} points earned.");
+        Console.WriteLine($"\n Event recorded! +{goals[index].GetPoints()} points earned.");
         Console.WriteLine($"Updated Score: {score}\n");
         Pause();
     }
@@ -145,7 +145,7 @@ class Program
                 writer.WriteLine(goal.SaveData());
             }
         }
-        Console.WriteLine("💾 Goals saved successfully to 'goals.txt'.\n");
+        Console.WriteLine("Goals saved successfully to 'goals.txt'.\n");
         Pause();
     }
 
@@ -155,7 +155,7 @@ class Program
 
         if (!File.Exists("goals.txt"))
         {
-            Console.WriteLine("⚠️ No save file found.\n");
+            Console.WriteLine("No save file found.\n");
             Pause();
             return;
         }
@@ -164,7 +164,7 @@ class Program
 
         if (lines.Length == 0)
         {
-            Console.WriteLine("⚠️ Save file is empty. No goals loaded.\n");
+            Console.WriteLine("Save file is empty. No goals loaded.\n");
             Pause();
             return;
         }
@@ -197,17 +197,16 @@ class Program
                 }
             }
 
-            Console.WriteLine("📂 Goals loaded successfully.\n");
+            Console.WriteLine("Goals loaded successfully.\n");
         }
         catch
         {
-            Console.WriteLine("⚠️ Save file is empty or invalid. No goals loaded.\n");
+            Console.WriteLine("Save file is empty or invalid. No goals loaded.\n");
         }
 
         Pause();
     }
 
-    // === Helper Methods ===
 
     static void Pause()
     {
@@ -224,7 +223,7 @@ class Program
             Console.Write(prompt);
             valid = int.TryParse(Console.ReadLine(), out input) && input >= min && input <= max;
             if (!valid)
-                Console.WriteLine($"❌ Invalid input. Please enter a number between {min} and {max}.");
+                Console.WriteLine($"Invalid input. Please enter a number between {min} and {max}.");
         } while (!valid);
         return input;
     }
@@ -238,7 +237,7 @@ class Program
             Console.Write(prompt);
             valid = int.TryParse(Console.ReadLine(), out input) && input > 0;
             if (!valid)
-                Console.WriteLine("❌ Invalid input. Please enter a positive number.");
+                Console.WriteLine("Invalid input. Please enter a positive number.");
         } while (!valid);
         return input;
     }
