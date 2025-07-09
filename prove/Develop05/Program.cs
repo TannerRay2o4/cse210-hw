@@ -23,7 +23,7 @@ class Program
             Console.WriteLine("  5. Load Goals from File");
             Console.WriteLine("  6. Quit");
 
-            int option = GetValidatedOption("Select an option (1–6): ", 1, 6);
+            int option = GetValidatedOption("Select an option (1-6): ", 1, 6);
             Console.WriteLine();
 
             switch (option)
@@ -100,7 +100,7 @@ class Program
     {
         if (goals.Count == 0)
         {
-            Console.WriteLine("⚠️ No goals available to record. Please create a goal first.\n");
+            Console.WriteLine("No goals available to record. Please create a goal first.\n");
             Pause();
             return;
         }

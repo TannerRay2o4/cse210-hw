@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello FinalProject World!");
+        PanelBoard panel = new PanelBoard();
+        BillOfMaterials bom = new BillOfMaterials();
+        LayoutPlanner planner = new LayoutPlanner(panel, bom);
+        planner.Run();
     }
 }
