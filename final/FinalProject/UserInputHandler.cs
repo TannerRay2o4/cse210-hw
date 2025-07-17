@@ -2,34 +2,24 @@ using System;
 
 public static class UserInputHandler
 {
-    public static int GetInt(string prompt, int min = int.MinValue, int max = int.MaxValue)
+    public static int GetInt(string prompt, int min, int max)
     {
         int value;
-        while (true)
+        do
         {
             Console.Write(prompt);
-            string input = Console.ReadLine();
-
-            if (int.TryParse(input, out value) && value >= min && value <= max)
-                return value;
-
-            Console.WriteLine("Invalid input. Try again.");
-        }
+        } while (!int.TryParse(Console.ReadLine(), out value) || value < min || value > max);
+        return value;
     }
 
-    public static double GetDouble(string prompt, double min = double.MinValue, double max = double.MaxValue)
+    public static double GetDouble(string prompt, double min)
     {
         double value;
-        while (true)
+        do
         {
             Console.Write(prompt);
-            string input = Console.ReadLine();
-
-            if (double.TryParse(input, out value) && value >= min && value <= max)
-                return value;
-
-            Console.WriteLine("Invalid input. Try again.");
-        }
+        } while (!double.TryParse(Console.ReadLine(), out value) || value < min);
+        return value;
     }
 
     public static string GetString(string prompt)

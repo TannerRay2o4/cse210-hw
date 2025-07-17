@@ -1,8 +1,17 @@
-1
-1
-0
-1
-29
-1
-4x4 Deep
-2
+Total Normal Receptacles: 1
+Total GFCI Receptacles:   1
+Total Light Switches:     1
+Total Lights:             2
+Total Breakers:           2
+Total Wire Length:        66 ft
+Total Cable Straps:       23
+Total 4x4 Deep Boxes: 3
+Total 4 in Octagon Boxes: 2
+
+Run 1:
+- GFCI Receptacle, Box: 4x4 Deep, Wire: 25 ft
+- Receptacle, Box: 4x4 Deep, Wire: 6 ft
+Run 2:
+- Light Switch, Box: 4x4 Deep, Wire: 27 ft
+- Light, Box: 4 in Octagon, Wire: 4 ft
+- Light, Box: 4 in Octagon, Wire: 4 ft
