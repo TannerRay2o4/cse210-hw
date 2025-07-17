@@ -103,7 +103,7 @@ public class LayoutPlanner
                 var circuit = panel.Circuits[i];
                 if (circuit == null) continue;
 
-                Console.WriteLine($"Circuit #{i + 1}: \nBreaker Size = {circuit.BreakerSize}A");
+                Console.WriteLine($"Circuit #{i + 1}: \nBreaker Size:             {circuit.BreakerSize}A");
 
                 int normalReceptacles = 0;
                 int gfciReceptacles = 0;
@@ -134,12 +134,12 @@ public class LayoutPlanner
                 }
 
                 Console.WriteLine($"Total Normal Receptacles: {normalReceptacles}");
-                Console.WriteLine($"Total GFCI Receptacles: {gfciReceptacles}");
-                Console.WriteLine($"Total Light Switches: {lightSwitches}");
-                Console.WriteLine($"Total Lights: {lights}");
-                Console.WriteLine($"Total Breakers: 1");
-                Console.WriteLine($"Total Wire Straps: {totalStraps}");
-                Console.WriteLine($"Total Wire Length: {totalWire} ft\n");
+                Console.WriteLine($"Total GFCI Receptacles:   {gfciReceptacles}");
+                Console.WriteLine($"Total Light Switches:     {lightSwitches}");
+                Console.WriteLine($"Total Lights:             {lights}");
+                Console.WriteLine($"Total Breakers:           1");
+                Console.WriteLine($"Total Wire Straps:        {totalStraps}");
+                Console.WriteLine($"Total Wire Length:        {totalWire} ft\n");
             }
 
             int selected = UserInputHandler.GetInt("Enter run number to delete: ", 1, panel.Circuits.Count);
@@ -218,7 +218,7 @@ public class LayoutPlanner
         int gfciCount = 0;
 
         if (runType == "receptacle")
-            gfciCount = UserInputHandler.GetInt("How many are GFCI? ", 0, numItems);
+            gfciCount = UserInputHandler.GetInt("How many are GFCI Receptacles? ", 0, numItems);
 
         int breakerSize = UserInputHandler.GetInt("Breaker size (amps): ", 15, 60);
 
@@ -235,7 +235,7 @@ public class LayoutPlanner
                     ? UserInputHandler.GetDouble("    Horizontal distance to panel (ft): ", 0)
                     : UserInputHandler.GetDouble($"    Horizontal distance from Receptacle #{i} (ft): ", 0);
 
-                Console.WriteLine("    Box size:\n    1. 4x4 Deep Box\n    2. Other");
+                Console.WriteLine("    Box size:\n\n    1. 4x4 Deep Box\n    2. Other");
                 int boxChoice = UserInputHandler.GetInt("    Enter choice: ", 1, 2);
                 string boxSize = boxChoice == 1 ? "4x4 Deep" : "Other";
 

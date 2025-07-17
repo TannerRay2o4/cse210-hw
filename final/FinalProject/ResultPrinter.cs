@@ -35,7 +35,7 @@ public static class ResultPrinter
             var circuit = panel.Circuits[i];
             if (circuit == null) continue;
 
-            Console.WriteLine($"Circuit #{i + 1}: \nBreaker Size = {circuit.BreakerSize}A");
+            Console.WriteLine($"Circuit #{i + 1}: \nBreaker Size:              {circuit.BreakerSize}A");
 
             int normalReceptacles = 0;
             int gfciReceptacles = 0;
@@ -65,13 +65,13 @@ public static class ResultPrinter
                 }
             }
 
-            Console.WriteLine($"Total Normal Receptacles: {normalReceptacles}");
-            Console.WriteLine($"Total GFCI Receptacles:   {gfciReceptacles}");
-            Console.WriteLine($"Total Light Switches:     {lightSwitches}");
-            Console.WriteLine($"Total Lights:             {lights}");
-            Console.WriteLine($"Total Breakers:           1");
-            Console.WriteLine($"Total Wire Straps:        {totalStraps}");
-            Console.WriteLine($"Total Wire Length:        {totalWire} ft\n");
+            Console.WriteLine($"Total Normal Receptacles:  {normalReceptacles}");
+            Console.WriteLine($"Total GFCI Receptacles:    {gfciReceptacles}");
+            Console.WriteLine($"Total Light Switches:      {lightSwitches}");
+            Console.WriteLine($"Total Lights:              {lights}");
+            Console.WriteLine($"Total Breakers:            1");
+            Console.WriteLine($"Total Wire Straps:         {totalStraps}");
+            Console.WriteLine($"Total Wire Length:         {totalWire} ft\n");
         }
 
         Console.WriteLine("Press Enter to return...");

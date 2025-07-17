@@ -12,6 +12,6 @@ public class Receptacle : ElectricalComponent
 
     public override double WireLengthFromPrevious()
     {
-        return 0; // Adjust if you plan to calculate wire for receptacles
+        return 0; 
     }
 }
